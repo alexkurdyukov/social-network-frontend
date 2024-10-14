@@ -1,12 +1,13 @@
-name: Premerge check
-run-name: ${{ github.actor }} run premerge check
+name: build/types/lints checks
+run-name: ${{ github.actor }} run checks
 
 on:
     pull_request:
         branches:
-            - master
+            - '*'
     push:
-        branches: [master]
+        branches:
+            - 'master'
 
 jobs:
     init:
@@ -31,5 +32,5 @@ jobs:
             - name: lint code
               run: npm run lint
 
-            - name: run typeckeck
+            - name: run typecheck
               run: npm run type-check
