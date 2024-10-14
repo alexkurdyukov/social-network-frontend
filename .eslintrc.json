@@ -8,9 +8,9 @@
     "root": true,
     "ignorePatterns": ["dist", ".eslintrc.cjs"],
     "rules": {
-        "import/no-anonymous-default-export": "off"
+        "import/no-anonymous-default-export": "off",
+        "no-console": ["error", { "allow": ["warn"] }]
     },
-    "ignores": ["**/.config/"],
     "overrides": [
         { "files": ["*.{c,m,}{t,j}s", "*.{t,j}sx"] },
         { "files": ["*{test,spec}.{t,j}s?(x)"], "env": { "jest": true } }

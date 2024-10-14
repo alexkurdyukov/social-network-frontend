@@ -13,7 +13,8 @@
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
         "type-check": "tsc --noEmit",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "lint-staged": "lint-staged"
     },
     "dependencies": {
         "@nextui-org/react": "^2.4.8",
@@ -48,8 +49,9 @@
         "husky": "^8.0.0"
     },
     "lint-staged": {
-        "*.ts": "npx tsc --noEmit",
-        "*.{js,jsx,ts,tsx}": "npx eslint",
-        "*.{js,jsx,ts,tsx,html,css}": "npx prettier --check"
+        "*.{js,ts,tsx,jsx}": [
+            "prettier --write",
+            "eslint --fix"
+        ]
     }
 }
