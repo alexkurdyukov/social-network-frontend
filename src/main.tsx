@@ -1,9 +1,12 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import App from './App';
 import { store } from './app/store/store';
-import { NextUIProvider } from '@nextui-org/react';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './app/router/router';
+import { ThemeProvider } from './shared/theme/provider';
+import { MantineProvider } from '@mantine/core';
+import '@mantine/core/styles.css';
 import './index.css';
 
 const container = document.getElementById('root');
@@ -14,9 +17,11 @@ if (container) {
     root.render(
         <React.StrictMode>
             <Provider store={store}>
-                <NextUIProvider>
-                    <App />
-                </NextUIProvider>
+                <MantineProvider>
+                    <ThemeProvider>
+                        <RouterProvider router={router} />
+                    </ThemeProvider>
+                </MantineProvider>
             </Provider>
         </React.StrictMode>,
     );
