@@ -1,6 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+main {
+    min-height: 100vh;
+}
 
 body {
     margin: 0;
@@ -12,4 +12,9 @@ body {
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+a,
+u {
+    text-decoration: none;
 }
